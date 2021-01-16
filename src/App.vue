@@ -9,6 +9,7 @@ export default {
 }
 </script>
 
+
 <template>
   <div id="app">
     <div id="nav">
@@ -17,6 +18,7 @@ export default {
     <router-view/>
   </div>
 </template>
+
 
 <style lang="scss">
 #app {

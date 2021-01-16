@@ -7,7 +7,7 @@ export default {
 
 <template>
     <div id="app">
-        <h3>My projects :</h3>
+        <h3>My projects</h3>
     </div>
 </template>
 

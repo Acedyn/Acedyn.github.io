@@ -7,7 +7,7 @@ export default {
             buttons : [
                 { index : 1, name : "About", link : "/about" },
                 { index : 2, name : "Portfolio", link : "/portfolio" },
-                { index : 3, name : "Contact", link : "/concact" }
+                { index : 3, name : "Contact", link : "/contact" }
             ]
         }    
     }
