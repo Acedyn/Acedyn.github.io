@@ -1,6 +1,6 @@
 <script>
 export default {
-    name : "Portfolio"
+    name: "Portfolio"
 }
 </script>
 
@@ -14,6 +14,6 @@ export default {
 
 <style>
 h3 {
-    color : red;
+    color: red;
 }
 </style>
