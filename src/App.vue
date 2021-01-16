@@ -13,9 +13,8 @@ export default {
   <div id="app">
     <div id="nav">
       <NavBar label="Simon Lambin" button="Click !" />
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
     </div>
+    <router-view/>
   </div>
 </template>
 
