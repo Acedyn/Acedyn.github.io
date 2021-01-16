@@ -12,7 +12,7 @@ export default {
 </template>
 
 
-<style>
+<style scope>
 h3 {
     color : purple;
 }

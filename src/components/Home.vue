@@ -1,19 +1,19 @@
 <script>
 export default {
-    name: "About"
+    name: "Home"
 }
 </script>
 
 
 <template>
     <div id="app">
-        <h3>About me</h3>
+        <h3>News</h3>
     </div>
 </template>
 
 
 <style scoped>
 h3 {
-    color: green;
+    color: pink;
 }
 </style>
