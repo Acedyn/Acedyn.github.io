@@ -11,12 +11,12 @@ export default {
 
 
 <template>
-  <div id="app">
-    <div id="nav">
-      <NavBar label="Simon Lambin" button="Click !" />
+    <div id="app">
+        <div id="nav">
+            <NavBar label="Simon Lambin" button="Click !" />
+        </div>
+        <router-view/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
 
