@@ -1,12 +1,12 @@
 <script>
 export default {
-    name: "Concact"
+    name: "Contact"
 }
 </script>
 
 
 <template>
-    <div id="app">
+    <div id="contact">
         <h3>Concact me</h3>
     </div>
 </template>
@@ -15,5 +15,9 @@ export default {
 <style scope>
 h3 {
     color : purple;
+}
+
+#contact {
+    border: solid 1px;
 }
 </style>

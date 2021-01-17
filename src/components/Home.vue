@@ -6,7 +6,7 @@ export default {
 
 
 <template>
-    <div id="app">
+    <div id="home">
         <h3>News</h3>
     </div>
 </template>
@@ -15,5 +15,9 @@ export default {
 <style scoped>
 h3 {
     color: pink;
+}
+
+#home {
+    border: solid 1px;
 }
 </style>

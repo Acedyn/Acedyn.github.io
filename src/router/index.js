@@ -22,7 +22,7 @@ const routes = [
     {
         path: "/contact",
         name: "Concact",
-        component: () => import("../components/Concact.vue")
+        component: () => import("../components/Contact.vue")
     }
 ]
 

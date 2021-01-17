@@ -6,7 +6,7 @@ export default {
 
 
 <template>
-    <div id="app">
+    <div id="about">
         <h3>About me</h3>
     </div>
 </template>
@@ -15,5 +15,9 @@ export default {
 <style scoped>
 h3 {
     color: green;
+}
+
+#about {
+    border: solid 1px;
 }
 </style>

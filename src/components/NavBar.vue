@@ -1,8 +1,8 @@
 <script>
 export default {
-    name : "NavBar",
-    props : ['label', 'button'],
-    data : function() {
+    name: "NavBar",
+    props: ["label", "button"],
+    data: function() {
         return {
             buttons : [
                 { index: 0, name:  "Home", link: "/"},
@@ -17,7 +17,7 @@ export default {
 
 
 <template>
-    <div id="app">
+    <div id="navbar">
         <h2>Hi, i'm {{ label }}</h2>
         <nav>
             <ul>
@@ -37,5 +37,9 @@ h2 {
 
 li {
     list-style : none;
+}
+
+#navbar {
+    border: solid 1px;
 }
 </style>
