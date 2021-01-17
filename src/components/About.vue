@@ -13,11 +13,11 @@ export default {
 
 
 <style scoped>
-h3 {
-    color: green;
+#about {
+    background-color: orange;
 }
 
-#about {
-    border: solid 1px;
+h3 {
+    color: green;
 }
 </style>

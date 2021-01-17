@@ -1,7 +1,6 @@
 <script>
 export default {
     name: "NavBar",
-    props: ["label", "button"],
     data: function() {
         return {
             buttons : [
@@ -18,28 +17,36 @@ export default {
 
 <template>
     <div id="navbar">
-        <h2>Hi, i'm {{ label }}</h2>
-        <nav>
-            <ul>
-                <li v-for="button in buttons" v-bind:key="button.key">
-                    <router-link v-bind:to="button.link">{{ button.name }}</router-link>
-                </li>
-            </ul>
-        </nav>
+        <h2>Hi, i'm Simon Lambin</h2>
+        <div style="display: grid;" class="nav">
+            <div v-for="button in buttons" v-bind:key="button.key">
+                <router-link v-bind:to="button.link" class="button">
+                    {{ button.name }}
+                </router-link>
+            </div>
+        </div>
     </div>
 </template>
 
 
-<style>
+<style scoped>
+#navbar {
+    background-color: grey;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
 h2 {
     color : blue;
+};
+
+.nav {
+    display: grid;
 }
 
-li {
-    list-style : none;
+.button {
+    background-color: black;
+    display: grid;
 }
 
-#navbar {
-    border: solid 1px;
-}
 </style>

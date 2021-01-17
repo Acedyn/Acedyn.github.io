@@ -24,26 +24,22 @@ export default {
 <template>
     <div id="portfolio">
         <h3>My projects</h3>
-        <ul>
-            <li v-for="index in 10" v-bind:key="index">
-                <ProjectCard v-bind:project="getProjects(index)"/>
-            </li>
-        </ul>
+        <div v-for="index in 10" v-bind:key="index" class="card">
+            <ProjectCard v-bind:project="getProjects(index)"/>
+        </div>
     </div>
 </template>
 
 
 <style scoped>
 #portfolio {
-    flex-direction: column;
-    border: solid 1px;
+    background-color: yellow;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: repeat(3, 1fr);
 }
 
 h3 {
     color: red;
-}
-
-ul {
-    flex-direction: column;
 }
 </style>

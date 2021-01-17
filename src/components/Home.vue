@@ -13,11 +13,11 @@ export default {
 
 
 <style scoped>
-h3 {
-    color: pink;
+#home {
+    background-color: purple;
 }
 
-#home {
-    border: solid 1px;
+h3 {
+    color: pink;
 }
 </style>

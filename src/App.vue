@@ -12,28 +12,31 @@ export default {
 
 <template>
     <div id="app">
-        <div id="nav">
-            <NavBar label="Simon Lambin" button="Click !" />
-        </div>
+        <NavBar id="navbar"/>
         <router-view/>
     </div>
 </template>
 
 
 <style lang="scss">
+* {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
-    display: flex;
-    flex-direction: row;
+    background-color: pink;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
 
-#nav {
-  padding: 30px;
-
+#navbar {
   a {
     font-weight: bold;
     color: #2c3e50;

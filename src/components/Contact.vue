@@ -13,11 +13,11 @@ export default {
 
 
 <style scope>
-h3 {
-    color : purple;
+#contact {
+    background-color: blue;
 }
 
-#contact {
-    border: solid 1px;
+h3 {
+    color : purple;
 }
 </style>

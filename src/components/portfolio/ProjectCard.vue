@@ -17,11 +17,12 @@ export default {
 
 
 <style scoped>
-h4 {
-    color: brown;
+#projectCard {
+    background-color: blue;
+    display:grid;
 }
 
-#projectCard {
-    border: solid 1px;
+h4 {
+    color: pink;
 }
 </style>
