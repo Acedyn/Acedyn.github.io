@@ -26,24 +26,14 @@ export default {
 }
 
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: "Segoe UI", Times, serif;
+    font-weight: normal;
     text-align: center;
-    background-color: pink;
+    background-color: #0F1621;
+    color: white;
 
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 350px 4fr;
 }
 
-#navbar {
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

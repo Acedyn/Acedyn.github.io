@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 #projectCard {
-    background-color: blue;
+    border-radius: 10px;
     display:grid;
 }
 
