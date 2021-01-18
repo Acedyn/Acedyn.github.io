@@ -78,7 +78,7 @@ a {
 }
 
 a.router-link-exact-active {
-    color: #A542DC;
+    color: #6836b3;
 }
 
 .name {
@@ -114,7 +114,7 @@ a.router-link-exact-active {
 .line {
     height: 2px;
     width: 80%;
-    background-color: #A542DC;
+    background-color: #6836b3;
     border-radius: 1px;
     margin-left: auto;
     margin-right: auto;

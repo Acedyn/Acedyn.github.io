@@ -29,7 +29,7 @@ export default {
 }
 
 #projectCard:hover {
-    background-color: #0D131C;
+    background-color: #0B111A;
 }
 
 h4 {
@@ -40,6 +40,7 @@ h4 {
 img {
     margin-left: auto;
     margin-right: auto;
+    object-fit: scale-down;
 }
 
 .description {

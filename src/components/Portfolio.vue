@@ -1,10 +1,12 @@
 <script>
 import ProjectCard from "./ProjectCard.vue"
+import PageTitle from "./PageTitle.vue"
 
 export default {
     name: "Portfolio",
     components : {
-        ProjectCard
+        ProjectCard,
+        PageTitle
     },
     methods: {
         getProjects(_index) {
@@ -23,17 +25,19 @@ export default {
 
 <template>
     <div id="portfolio">
-        <span/>
-        <div class="title">
-            <h3>MY PROJECTS</h3>
-            <span class="line"/>
-        </div>
+        <PageTitle title="MY PROJECTS"/>
         <ul class="nav">
             <li v-for="index in 6" v-bind:key="index" class="card">
                 <ProjectCard v-bind:project="getProjects(index)"/>
             </li>
         </ul>
-        <span/>
+        <div class="pages">
+            <span class="leftArrow"/>
+            <span class="space"/>
+            <p>1</p>
+            <span class="space"/>
+            <span class="rightArrow"/>
+        </div>
     </div>
 </template>
 
@@ -42,33 +46,12 @@ export default {
 #portfolio {
     display: grid;
     grid-gap: 20px;
-    grid-template-rows: 1px 1fr 10fr 30px;
+    grid-template-rows: 1fr 10fr 50px;
+    overflow: auto;
 }
 
 ul {
     list-style: none;
-}
-
-.title {
-    display: grid;
-    grid-template-rows: 1fr 2px;
-}
-
-.title h3 {
-    display: grid;
-    align-items: center;
-    font-weight: normal;
-    font-size: 30px;
-    color: #C8C8C8;
-}
-
-.line {
-    height: 2px;
-    width: 95%;
-    background-color: #A542DC;
-    border-radius: 1px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .nav {
@@ -76,5 +59,50 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #C8C8C8;
+}
+
+.pages p {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 2px;
+}
+
+.space {
+    width: 30px;
+}
+
+.leftArrow {
+    margin-top: auto;
+    margin-bottom: auto;
+    content: "";
+    display: inline-block !important;
+    width: 0;
+    height: 0;
+    border-right: 8px solid #6836b3;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    vertical-align: middle;
+}
+
+.rightArrow {
+    margin-top: auto;
+    margin-bottom: auto;
+    content: "";
+    display: inline-block !important;
+    width: 0;
+    height: 0;
+    border-left: 8px solid #6836b3;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    vertical-align: middle;
 }
 </style>

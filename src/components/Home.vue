@@ -1,23 +1,24 @@
 <script>
+import PageTitle from "./PageTitle.vue"
+
 export default {
-    name: "Home"
+    name: "Home",
+    components : {
+        PageTitle
+    }
 }
 </script>
 
 
 <template>
     <div id="home">
-        <h3>News</h3>
+        <PageTitle title="HOME"/>
     </div>
 </template>
 
 
 <style scoped>
 #home {
-    background-color: purple;
-}
-
-h3 {
-    color: pink;
+    display: grid;
 }
 </style>
