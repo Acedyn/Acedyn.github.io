@@ -14,10 +14,6 @@ export default {
 
 <style scope>
 #contact {
-    background-color: blue;
-}
-
-h3 {
-    color : purple;
+    display: grid;
 }
 </style>

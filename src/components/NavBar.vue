@@ -130,6 +130,11 @@ a.router-link-exact-active {
     align-items: center;
     font-size: 20px;
     color: #C8C8C8;
+    transition: 0.1s;
+}
+
+.button:hover {
+    background-color: #252A38;
 }
 
 .footer {
