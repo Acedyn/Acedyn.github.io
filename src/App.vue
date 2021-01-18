@@ -33,7 +33,7 @@ export default {
     color: white;
 
     display: grid;
-    grid-template-columns: 350px 4fr;
+    grid-template-columns: 300px 4fr;
 }
 
 </style>

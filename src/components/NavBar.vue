@@ -19,10 +19,10 @@ export default {
     data: function() {
         return {
             buttons : [
-                { index: 0, name:  "Home", link: "/"},
-                { index: 1, name: "About", link: "/about" },
-                { index: 2, name: "Portfolio", link: "/portfolio" },
-                { index: 3, name: "Contact", link: "/contact" }
+                { index: 0, name:  "HOME", link: "/"},
+                { index: 1, name: "ABOUT", link: "/about" },
+                { index: 2, name: "PORTFOLIO", link: "/portfolio" },
+                { index: 3, name: "CONTACT", link: "/contact" }
             ]
         }    
     },
@@ -37,6 +37,7 @@ export default {
 
 <template>
     <div id="navbar">
+        <span/>
         <div class="name">
             <div>
                 <h2 class="simon">Simon</h2>
@@ -46,12 +47,11 @@ export default {
             </div>
             <div class="job">
                 <span class="line"/>
-                <div>
-                    <h3>Technical Director</h3>
-                </div>
+                <h3 class="td">Technical Director</h3>
                 <span class="line"/>
             </div>
         </div>
+        <span/>
         <ul style="display: grid;" class="nav">
             <li v-for="button in buttons" v-bind:key="button.key">
                 <router-link v-bind:to="button.link" class="button">
@@ -59,6 +59,8 @@ export default {
                 </router-link>
             </li>
         </ul>
+        <span/>
+        <p class="footer">made with vueJS</p>
     </div>
 </template>
 
@@ -66,15 +68,8 @@ export default {
 <style scoped>
 #navbar {
     display: grid;
-    grid-template-rows: 3fr 5fr;
+    grid-template-rows: 2fr 6fr 2fr 10fr 3fr 1fr;
     background-color: #292F3E;
-}
-
-h2, h3 {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    font-weight: normal;
 }
 
 a {
@@ -93,21 +88,31 @@ a.router-link-exact-active {
 .simon {
     position: relative;
     font-weight: normal;
+    font-size: 45px;
 }
 
 .lambin {
     position: relative;
+    bottom: 20px;
     font-weight: bold;
+    font-size: 45px;
 }
 
 .job {
     display: grid;
     width: 100%;
     align-items: center;
+    font-weight: normal;
+}
+
+.td {
+    display:grid;
+    align-items: center;
+    font-weight: normal;
 }
 
 .line {
-    height: 3px;
+    height: 2px;
     width: 80%;
     background-color: #A542DC;
     border-radius: 1px;
@@ -123,6 +128,13 @@ a.router-link-exact-active {
     display: grid;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
+    color: #C8C8C8;
+}
+
+.footer {
+    font-size: 12px;
+    color: #C8C8C8;
 }
 
 </style>
