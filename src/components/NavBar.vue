@@ -16,7 +16,7 @@ function fitTitles(element) {
 
 export default {
     name: "NavBar",
-    data: function() {
+    data: () => {
         return {
             buttons : [
                 { index: 0, name:  "HOME", link: "/"},
@@ -88,14 +88,14 @@ a.router-link-exact-active {
 .simon {
     position: relative;
     font-weight: normal;
-    font-size: 45px;
+    font-size: 300%;
 }
 
 .lambin {
     position: relative;
     bottom: 20px;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 300%;
 }
 
 .job {
@@ -109,6 +109,7 @@ a.router-link-exact-active {
     display:grid;
     align-items: center;
     font-weight: normal;
+    font-size: 120%;
 }
 
 .line {
@@ -128,7 +129,7 @@ a.router-link-exact-active {
     display: grid;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 130%;
     color: #C8C8C8;
     transition: 0.1s;
 }
@@ -138,7 +139,7 @@ a.router-link-exact-active {
 }
 
 .footer {
-    font-size: 12px;
+    font-size: 80%;
     color: #C8C8C8;
 }
 

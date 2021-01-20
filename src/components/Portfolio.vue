@@ -47,7 +47,6 @@ export default {
     display: grid;
     grid-gap: 20px;
     grid-template-rows: 1fr 10fr 50px;
-    overflow: auto;
 }
 
 ul {
@@ -59,6 +58,18 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .nav {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .pages {

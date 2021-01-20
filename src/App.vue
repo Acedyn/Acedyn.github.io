@@ -25,13 +25,15 @@ export default {
     height: 100%;
 }
 
-#app {
+html {
     font-family: "Segoe UI", Times, serif;
     font-weight: normal;
     text-align: center;
-    background-color: #0F1621;
     color: white;
+    background-color: #0F1621;
+}
 
+#app {
     display: grid;
     grid-template-columns: 300px 4fr;
 }
