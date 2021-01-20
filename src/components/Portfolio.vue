@@ -1,4 +1,12 @@
 <script>
+function getProjets() {
+    let req = new XMLHttpRequest();
+    req.addEventListener("load", (response) => { console.log(response) })
+    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects")
+    req.send()
+}
+
+
 import ProjectCard from "./ProjectCard.vue"
 import PageTitle from "./PageTitle.vue"
 
@@ -18,6 +26,9 @@ export default {
                 image: "default/warning.svg"
             }
         }
+    },
+    mounted() {
+        getProjets()
     }
 }
 </script>
@@ -44,9 +55,10 @@ export default {
 
 <style scoped>
 #portfolio {
+    overflow: auto;
     display: grid;
     grid-gap: 20px;
-    grid-template-rows: 1fr 10fr 50px;
+    grid-template-rows: 50px 1fr 50px;
 }
 
 ul {
