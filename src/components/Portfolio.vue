@@ -1,9 +1,10 @@
 <script>
-function getProjectContent() {
-    // let base64 = require('js-base64').Base64;
+function getProjectContent(project) {
+    let base64 = require('js-base64').Base64;
     let req = new XMLHttpRequest();
-    req.addEventListener("load", (response) => { console.log(response.srcElement.response) })
-    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/DroneShot.md")
+    req.addEventListener("load", (response) => { console.log(base64.decode(JSON.parse(response.srcElement.response).content)) })
+    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/" + project.name)
+    req.setRequestHeader("Accept", "application/json")
     req.send()
 }
 
