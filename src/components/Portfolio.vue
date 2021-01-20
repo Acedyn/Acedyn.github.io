@@ -1,10 +1,9 @@
 <script>
-function getProjectContent(project) {
+function getProjectContent() {
     // let base64 = require('js-base64').Base64;
     let req = new XMLHttpRequest();
     req.addEventListener("load", (response) => { console.log(response.srcElement.response) })
-    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/" + project.name)
-    req.setRequestHeader("Accept", "application/vnd.github.VERSION.raw")
+    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/DroneShot.md")
     req.send()
 }
 
