@@ -1,7 +1,23 @@
 <script>
+function getProjectContent(project) {
+    // let base64 = require('js-base64').Base64;
+    let req = new XMLHttpRequest();
+    req.addEventListener("load", (response) => { console.log(response.srcElement.response) })
+    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/" + project.name)
+    req.setRequestHeader("Accept", "application/vnd.github.VERSION.raw")
+    req.send()
+}
+
 function getProjets() {
     let req = new XMLHttpRequest();
-    req.addEventListener("load", (response) => { console.log(response) })
+    req.addEventListener("load", (response) => {
+        let projects = JSON.parse(response.srcElement.response)
+        for(let index in projects)
+        {
+            let project = projects[index]
+            getProjectContent(project)
+        }
+    })
     req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects")
     req.send()
 }
