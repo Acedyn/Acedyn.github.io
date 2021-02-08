@@ -60,7 +60,7 @@ export default {
             </li>
         </ul>
         <span/>
-        <p class="footer">made with vueJS</p>
+        <p class="footer">2020/2021</p>
     </div>
 </template>
 

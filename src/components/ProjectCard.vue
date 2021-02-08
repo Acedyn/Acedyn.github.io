@@ -11,6 +11,7 @@ export default {
         <h4>{{ project.name }}</h4>
         <img v-bind:src="require('../assets/' + project.image)" v-bind:alt="project.description"/>
         <p class="description">{{ project.description }}</p>
+        <span/>
         <p class="category">{{ project.category }}</p>
         <span/>
     </div>
@@ -20,9 +21,8 @@ export default {
 <style scoped>
 #projectCard {
     border-radius: 20px;
-    display:grid;
-    grid-template-rows: 30px 3fr 2fr 30px 30px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     color: #C8C8C8;
     transition: 0.1s;
@@ -40,11 +40,13 @@ h4 {
 img {
     margin-left: auto;
     margin-right: auto;
-    object-fit: scale-down;
+    max-width: 100%;
+    max-height: 60%;
 }
 
 .description {
     font-size: 15px;
+    text-overflow: ellipsis;
 }
 
 .category {

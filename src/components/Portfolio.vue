@@ -1,11 +1,22 @@
 <script>
+
 function getProjectContent(project) {
-    let base64 = require('js-base64').Base64;
-    let req = new XMLHttpRequest();
-    req.addEventListener("load", (response) => { console.log(base64.decode(JSON.parse(response.srcElement.response).content)) })
-    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/" + project.name)
-    req.setRequestHeader("Accept", "application/json")
-    req.send()
+    // let base64 = require('js-base64').Base64
+    console.log(project.name)
+    var xhr = new XMLHttpRequest();
+    // xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function() {
+        if(this.readyState === 4) {
+            // let response = base64.decode(JSON.parse(this.responseText).content)
+            console.log(this.responseText)
+        }
+    });
+
+    xhr.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/BuildingGenerator.md");
+    xhr.setRequestHeader("Accept", "application/vnd.github.v3.html");
+
+    // xhr.send();
 }
 
 function getProjets() {
@@ -19,7 +30,7 @@ function getProjets() {
         }
     })
     req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects")
-    req.send()
+    // req.send()
 }
 
 
@@ -32,16 +43,40 @@ export default {
         ProjectCard,
         PageTitle
     },
+    data: () => {
+        return {
+            projects: [
+                {
+                    name: "None",
+                    category: "Loading",
+                    description: "Loading project",
+                    image: "default/warning.svg"
+                }
+            ]
+        }
+    },
     methods: {
         getProjects(_index) {
-            return {
-                index: _index,
-                name: "None",
-                category: "No category",
-                description: "Project description : This is an example project, this text will be fetched from a markdown file that will describe the project.",
-                image: "default/warning.svg"
+            if(this.projects[0].name == "None") {
+                return {
+                    index: _index,
+                    name: "None",
+                    category: "No category",
+                    description: "No description",
+                    image: "default/warning.svg"
+                }
             }
         }
+    },
+    beforeCreate() {
+        let req = new XMLHttpRequest();
+        req.addEventListener("load", (response) => {
+            // this.projects = JSON.parse(response.srcElement.response)
+            console.log(JSON.parse(response.srcElement.response))
+        })
+        
+        req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects")
+        req.send()
     },
     mounted() {
         getProjets()
@@ -58,13 +93,6 @@ export default {
                 <ProjectCard v-bind:project="getProjects(index)"/>
             </li>
         </ul>
-        <div class="pages">
-            <span class="leftArrow"/>
-            <span class="space"/>
-            <p>1</p>
-            <span class="space"/>
-            <span class="rightArrow"/>
-        </div>
     </div>
 </template>
 
@@ -77,71 +105,16 @@ export default {
     grid-template-rows: 50px 1fr 50px;
 }
 
-ul {
-    list-style: none;
-}
-
 .nav {
+    list-style: none;
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-}
-
-@media screen and (max-width: 1200px) {
-    .nav {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .nav {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.pages {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    color: #C8C8C8;
+    flex-wrap: wrap;
 }
 
-.pages p {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 2px;
-}
-
-.space {
-    width: 30px;
-}
-
-.leftArrow {
-    margin-top: auto;
-    margin-bottom: auto;
-    content: "";
-    display: inline-block !important;
-    width: 0;
-    height: 0;
-    border-right: 8px solid #6836b3;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    vertical-align: middle;
-}
-
-.rightArrow {
-    margin-top: auto;
-    margin-bottom: auto;
-    content: "";
-    display: inline-block !important;
-    width: 0;
-    height: 0;
-    border-left: 8px solid #6836b3;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    vertical-align: middle;
+.card {
+    width: 400px;
+    height: 500px;
 }
 </style>
