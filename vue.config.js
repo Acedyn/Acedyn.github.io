@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/portfolio-simon-lambin/'
+  publicPath: 'Acedyn.github.io'
 }
