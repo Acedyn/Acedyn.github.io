@@ -1,39 +1,4 @@
 <script>
-
-function getProjectContent(project) {
-    // let base64 = require('js-base64').Base64
-    console.log(project.name)
-    var xhr = new XMLHttpRequest();
-    // xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function() {
-        if(this.readyState === 4) {
-            // let response = base64.decode(JSON.parse(this.responseText).content)
-            console.log(this.responseText)
-        }
-    });
-
-    xhr.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/BuildingGenerator.md");
-    xhr.setRequestHeader("Accept", "application/vnd.github.v3.html");
-
-    // xhr.send();
-}
-
-function getProjets() {
-    let req = new XMLHttpRequest();
-    req.addEventListener("load", (response) => {
-        let projects = JSON.parse(response.srcElement.response)
-        for(let index in projects)
-        {
-            let project = projects[index]
-            getProjectContent(project)
-        }
-    })
-    req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects")
-    // req.send()
-}
-
-
 import ProjectCard from "./ProjectCard.vue"
 import PageTitle from "./PageTitle.vue"
 
@@ -45,41 +10,52 @@ export default {
     },
     data: () => {
         return {
-            projects: [
-                {
-                    name: "None",
-                    category: "Loading",
-                    description: "Loading project",
-                    image: "default/warning.svg"
-                }
-            ]
-        }
-    },
-    methods: {
-        getProjects(_index) {
-            if(this.projects[0].name == "None") {
-                return {
-                    index: _index,
-                    name: "None",
-                    category: "No category",
-                    description: "No description",
-                    image: "default/warning.svg"
-                }
-            }
+            projects: []
         }
     },
     beforeCreate() {
-        let req = new XMLHttpRequest();
-        req.addEventListener("load", (response) => {
-            // this.projects = JSON.parse(response.srcElement.response)
-            console.log(JSON.parse(response.srcElement.response))
+        let xhr_projects = new XMLHttpRequest();
+        xhr_projects.addEventListener("load", (projects_response) => {
+            let projects = JSON.parse(projects_response.srcElement.response)
+            
+            for(let project in projects)
+            {
+                let xhr_project = new XMLHttpRequest();
+                xhr_project.addEventListener("load", (project_response) => {
+                    let parser = new DOMParser();
+                    let content = parser.parseFromString(project_response.srcElement.response, "text/html")
+                    let name = content.getElementsByTagName("h1")[0].textContent
+                    let description = content.getElementById("user-content-description").parentNode.nextSibling.nextSibling.textContent
+                    let categories = []
+                    let categoriesDOM = content.getElementById("user-content-tools").parentNode.nextSibling.nextSibling.childNodes
+                    for( let category in categoriesDOM)
+                    {
+                        if(typeof categoriesDOM[category].textContent !== "undefined" && categoriesDOM[category].textContent !== "\n")
+                        {
+                            categories.push(categoriesDOM[category].textContent)
+                        }
+                    }
+                    
+                    console.log(categories)
+                    
+                    this.projects.push(
+                        {
+                            name: name,
+                            category: categories,
+                            description: description,
+                            image: "default/warning.svg"
+                        }
+                    )
+                })
+                let url = "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/" + projects[project].name
+                xhr_project.open("GET", url)
+                xhr_project.setRequestHeader("Accept", "application/vnd.github.v3.html")
+                xhr_project.send()
+            }
         })
         
-        req.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects")
-        req.send()
-    },
-    mounted() {
-        getProjets()
+        xhr_projects.open("GET", "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects")
+        xhr_projects.send()
     }
 }
 </script>
@@ -89,8 +65,8 @@ export default {
     <div id="portfolio">
         <PageTitle title="MY PROJECTS"/>
         <ul class="nav">
-            <li v-for="index in 6" v-bind:key="index" class="card">
-                <ProjectCard v-bind:project="getProjects(index)"/>
+            <li v-for="project in projects" v-bind:key="project.name" class="card">
+                <ProjectCard v-bind:project="project"/>
             </li>
         </ul>
     </div>

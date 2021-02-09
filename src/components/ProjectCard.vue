@@ -12,8 +12,9 @@ export default {
         <img v-bind:src="require('../assets/' + project.image)" v-bind:alt="project.description"/>
         <p class="description">{{ project.description }}</p>
         <span/>
-        <p class="category">{{ project.category }}</p>
-        <span/>
+        <div class="categories">
+            <p class="category">{{ project.category[0] }}</p>
+        </div>
     </div>
 </template>
 
@@ -26,6 +27,7 @@ export default {
     justify-content: center;
     color: #C8C8C8;
     transition: 0.1s;
+    padding-top: 15px;
 }
 
 #projectCard:hover {
