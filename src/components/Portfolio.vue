@@ -36,12 +36,10 @@ export default {
                         }
                     }
                     
-                    console.log(categories)
-                    
                     this.projects.push(
                         {
                             name: name,
-                            category: categories,
+                            categories: categories,
                             description: description,
                             image: "default/warning.svg"
                         }
@@ -90,6 +88,8 @@ export default {
 }
 
 .card {
+    padding-top: 30px;
+    padding-bottom: 30px;
     width: 400px;
     height: 500px;
 }

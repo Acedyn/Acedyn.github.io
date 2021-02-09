@@ -12,9 +12,9 @@ export default {
         <img v-bind:src="require('../assets/' + project.image)" v-bind:alt="project.description"/>
         <p class="description">{{ project.description }}</p>
         <span/>
-        <div class="categories">
-            <p class="category">{{ project.category[0] }}</p>
-        </div>
+        <ul class="categories">
+            <li v-for="category in project.categories" v-bind:key="category" class="category">{{ category }}</li>
+        </ul>
     </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
     justify-content: center;
     color: #C8C8C8;
     transition: 0.1s;
-    padding-top: 15px;
+    padding: 20px;
 }
 
 #projectCard:hover {
@@ -51,7 +51,14 @@ img {
     text-overflow: ellipsis;
 }
 
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .category {
+    list-style: none;
     font-size: 15px;
     font-weight: bold;
 }
