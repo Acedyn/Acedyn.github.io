@@ -13,6 +13,13 @@ export default {
 <template>
     <div id="about">
         <PageTitle title="ABOUT ME"/>
+        <img title="profile" class="profile" src="../assets/photos/identité.jpg"/>
+        <div class="curiculum">
+            <ul class="formation">
+            </ul>
+            <ul class="experience">
+            </ul>
+        </div>
     </div>
 </template>
 
