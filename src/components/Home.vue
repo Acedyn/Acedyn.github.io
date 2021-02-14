@@ -47,7 +47,12 @@ export default {
     <div id="home">
         <PageTitle title="HOME"/>
         <VideoPlayer/>
-        <p class="introduction">My name is Simon, I am currently a student in computer programming at ArtFX. I started as a 3D generalist and now focus more on programming. My main softwares are Houdini and Unreal, I am highly interested in procedual modeling but also in procedural in general (Animation, FX...)</p>
+        <p class="introduction">
+            My name is Simon, I am currently a student in computer programming at ArtFX. 
+            I started as a 3D generalist and now focus more on programming. 
+            My main softwares are Houdini, Maya and Unreal, I am highly interested in procedual modeling but also in procedural in general (Animation, FX...) 
+            <br/>
+        </p>
         <ul class="logos">
             <li class="logo" v-for="logo in logos" v-bind:key="logo"><img v-bind:src="logo" alt=""></li>
         </ul>
@@ -59,15 +64,12 @@ export default {
 #home {
     overflow: auto;
     display: grid;
-    grid-template-rows: 51px 4fr 4fr 1fr;
-}
-
-VideoPlayer {
-    display: grid;
+    grid-template-rows: 50px 4fr 4fr 1fr;
 }
 
 .introduction {
-    margin: 20px;
+    font-size: 16px;
+    padding: 20px;
     text-align: center;
     color: #C8C8C8;
     padding: auto;
