@@ -1,0 +1,41 @@
+{
+    "curiculum":
+    [
+        {
+            "name": "Technical director",
+            "dateStart": "September 2020",
+            "dateEnd": "June 2022",
+            "place": "Montpellier - France",
+            "extra": ["School : ArtFX"]
+        },
+        {
+            "name": "CGI & Visual effect",
+            "dateStart": "September 2018",
+            "dateEnd": "June 2020",
+            "place": "Montpellier - France",
+            "extra": ["School : ArtFX"]
+        },
+        {
+            "name": "Preparatory class - 2D Animation",
+            "dateStart": "September 2017",
+            "dateEnd": "June 2018",
+            "place": "Paris - France",
+            "extra": ["School : Atelier de Sèvres"]
+        },
+        {
+            "name": "Baccalaureate - Design",
+            "dateStart": "June 2016",
+            "dateEnd": "June 2016",
+            "place": "Loos - France",
+            "extra": ["School : Saint Vincent de Paul"]
+        },
+        {
+            "name": "Driving liscence",
+            "dateStart": "November 2016",
+            "dateEnd": "November 2016",
+            "place": "Perenchie - France",
+            "extra": ["School : Auto ecole Benoit"]
+        }
+    ]
+}
+

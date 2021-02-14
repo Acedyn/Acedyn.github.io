@@ -1,12 +1,12 @@
 <script>
 import PageTitle from "./PageTitle.vue"
-import CuriculumElement from "./Contact.vue"
+import CuriculumCategory from "./CuriculumCategory.vue"
 
 export default {
     name: "About",
     components : {
         PageTitle,
-        CuriculumElement
+        CuriculumCategory
     }
 }
 </script>
@@ -19,9 +19,9 @@ export default {
             <img title="profile" class="profile" src="../assets/photos/identité.jpg"/>
         </div>
         <ul class="Curiculum">
-            <li><CuriculumElement/></li>
-            <li><CuriculumElement/></li>
-            <li><CuriculumElement/></li>
+            <li><CuriculumCategory name="Formations"/></li>
+            <li><CuriculumCategory name="Professionnal Experience"/></li>
+            <li><CuriculumCategory name="Skills"/></li>
         </ul>
     </div>
 </template>
@@ -44,14 +44,16 @@ export default {
 .profile {
     overflow: hide;
     margin: auto;
-    width: 20%;
-    height: auto;
+    width: auto;
+    height: 50%;
+    max-width: 80%;
     border-radius: 50%;
 }
 
 .curiculum {
     display: flex;
     flex-direction: row;
+    flex-wrap: warp;
     justify-content: space-between;
     color: #C8C8C8;
 }

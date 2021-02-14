@@ -1,0 +1,40 @@
+{
+    "curiculum":
+    [
+        {
+            "name": "Waiter",
+            "dateStart": "July 2020",
+            "dateEnd": "September 2020",
+            "place": "Annecy - France",
+            "extra": ["Compagny : La salle des gardes"]
+        },
+        {
+            "name": "School supervisor",
+            "dateStart": "September 2019",
+            "dateEnd": "October 2019",
+            "place": "La Roche sur Foron - France",
+            "extra": ["School : ESCR"]
+        },
+        {
+            "name": "Cashier",
+            "dateStart": "July 2018",
+            "dateEnd": "August 2018",
+            "place": "Paris - France",
+            "extra": ["Compagny : Picard"]
+        },
+        {
+            "name": "Activity organizer",
+            "dateStart": "July 2016",
+            "dateEnd": "August 2016",
+            "place": "Saint-André - France",
+            "extra": ["Compagny : CAP"]
+        },
+        {
+            "name": "Observation internship",
+            "dateStart": "June 2014",
+            "dateEnd": "June 2014",
+            "place": "Lomme - France",
+            "extra": ["Compagny : RedFrogg Studio"]
+        }
+    ]
+}
