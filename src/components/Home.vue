@@ -2,6 +2,16 @@
 import PageTitle from "./PageTitle.vue"
 import VideoPlayer from "./VideoPlayer.vue"
 
+import logoCpp from "../assets/logos/c++.png"
+import logoHoudini from "../assets/logos/houdini.png"
+import logoMaya from "../assets/logos/maya.png"
+import logoPython from "../assets/logos/python.png"
+import logoUnity from "../assets/logos/unity.png"
+import logoUnreal from "../assets/logos/unreal.png"
+import logoVim from "../assets/logos/vim.png"
+import logoVS from "../assets/logos/vs.png"
+import logoWeb from "../assets/logos/web.png"
+
 export default {
     name: "Home",
     components : {
@@ -10,30 +20,23 @@ export default {
     },
     data: () => {
         return {
-            videos: [
-                "../assets/video/reel-drone.mp4",
-                "../assets/video/reel-buildingGenerator.mp4",
-                "../assets/video/reel-mazeGenerator.mp4",
-                "../assets/video/reel-environment.mp4",
-                "../assets/video/reel-mystique.mp4",
-            ],
             logos: [
-                "../assets/logos/c++.png",
-                "../assets/logos/houdini.png",
-                "../assets/logos/maya.png",
-                "../assets/logos/python.png",
-                "../assets/logos/unity.png",
-                "../assets/logos/unreal.png",
-                "../assets/logos/vim",
-                "../assets/logos/vs.png",
-                "../assets/logos/web.png",
+                logoCpp,
+                logoHoudini,
+                logoMaya,
+                logoPython,
+                logoUnity,
+                logoUnreal,
+                logoVim,
+                logoVS,
+                logoWeb
             ]
         }
     },
     methods: {
-        getLogo(index){
-            console.log(index)
-            return index
+        getLogo(path){
+            console.log(path)
+            return require(path)
         }
     }
 }
@@ -46,7 +49,7 @@ export default {
         <VideoPlayer/>
         <p class="introduction">My name is Simon, I am currently a student in computer programming at ArtFX. I started as a 3D generalist and now focus more on programming. My main softwares are Houdini and Unreal, I am highly interested in procedual modeling but also in procedural in general (Animation, FX...)</p>
         <ul class="logos">
-            <li class="logo" v-for="logo in logos" v-bind:key="logo"><img v-bind:src="getLogo(logo)" alt=""></li>
+            <li class="logo" v-for="logo in logos" v-bind:key="logo"><img v-bind:src="logo" alt=""></li>
         </ul>
     </div>
 </template>
@@ -81,6 +84,7 @@ VideoPlayer {
 .logo {
     height: 80px;
     width: auto;
-    opacity: 70%;
+    opacity: 50%;
+    margin: 10px;
 }
 </style>
