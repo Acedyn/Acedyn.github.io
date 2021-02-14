@@ -19,7 +19,7 @@ export default {
 <template>
     <div id="videoplayer">
         <video id="video">
-            <source controls v-bind:src="videos[0]" type="video/mp4" autoplay="true">
+            <source controls src="../assets/video/reel-drone.mp4" type="video/mp4" autoplay="true">
             Video could not be loaded
         </video>
     </div>

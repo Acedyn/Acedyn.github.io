@@ -76,7 +76,7 @@ export default {
     overflow: auto;
     display: grid;
     grid-gap: 20px;
-    grid-template-rows: 50px 1fr 50px;
+    grid-template-rows: 50px 1fr;
 }
 
 .nav {
