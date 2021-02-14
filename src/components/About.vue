@@ -1,4 +1,8 @@
 <script>
+import experience from "../assets/curiculum/experience.json"
+import formation from "../assets/curiculum/formation.json"
+import skills from "../assets/curiculum/skills.json"
+
 import PageTitle from "./PageTitle.vue"
 import CuriculumCategory from "./CuriculumCategory.vue"
 
@@ -7,7 +11,14 @@ export default {
     components : {
         PageTitle,
         CuriculumCategory
-    }
+    },
+    data: () => {
+        return {
+            experience: experience,
+            formation: formation,
+            skills: skills
+        }
+    },
 }
 </script>
 
@@ -18,10 +29,10 @@ export default {
         <div class="header">
             <img title="profile" class="profile" src="../assets/photos/identité.jpg"/>
         </div>
-        <ul class="Curiculum">
-            <li><CuriculumCategory name="Formations"/></li>
-            <li><CuriculumCategory name="Professionnal Experience"/></li>
-            <li><CuriculumCategory name="Skills"/></li>
+        <ul class="curiculum">
+            <li class="element"><CuriculumCategory name="Formations" v-bind:curiculum="formation"/></li>
+            <li class="element"><CuriculumCategory name="Skills" v-bind:curiculum="skills"/></li>
+            <li class="element"><CuriculumCategory name="Experience" v-bind:curiculum="experience"/></li>
         </ul>
     </div>
 </template>
@@ -31,8 +42,7 @@ export default {
 #about {
     overflow: auto;
     display: grid;
-    grid-gap: 20px;
-    grid-template-rows: 50px 1fr 1fr;
+    grid-template-rows: 50px 300px 1fr;
 }
 
 .header {
@@ -51,10 +61,17 @@ export default {
 }
 
 .curiculum {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
-    flex-wrap: warp;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     color: #C8C8C8;
+}
+
+.element {
+    list-style: none;
+    width: 300px;
 }
 </style>
