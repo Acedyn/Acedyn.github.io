@@ -73,7 +73,6 @@ export default {
     text-align: center;
     color: #C8C8C8;
     padding: auto;
-    padding-top: 20px;
 }
 
 .logos {
