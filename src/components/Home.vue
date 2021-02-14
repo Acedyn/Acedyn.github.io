@@ -17,6 +17,9 @@ export default {
         <PageTitle title="HOME"/>
         <VideoPlayer/>
         <p>My name is Simon, I am currently a student in computer programming at ArtFX. I started as a 3D generalist and now focus more on programming. My main softwares are Houdini and Unreal, I am highly interested in procedual modeling but also in procedural in general (Animation, FX...)</p>
+        <ul>
+            <li><img src="" alt=""></li>
+        </ul>
     </div>
 </template>
 
@@ -34,5 +37,6 @@ VideoPlayer {
 
 p {
     text-align: center;
+    color: #C8C8C8;
 }
 </style>
