@@ -1,16 +1,37 @@
 <script>
+import videoDrone from "../assets/video/reel-drone.mp4"
+import videoBuilding from "../assets/video/reel-buildingGenerator.mp4"
+import videoMaze from "../assets/video/reel-mazeGenerator.mp4"
+import videoEnvironment from "../assets/video/reel-environment.mp4"
+import videoMystique from "../assets/video/reel-mystique.mp4"
+
+
 export default {
     name: "VideoPlayer",
     data: () => {
         return {
             videos: [
-                "../assets/video/reel-drone.mp4",
-                "../assets/video/reel-buildingGenerator.mp4",
-                "../assets/video/reel-mazeGenerator.mp4",
-                "../assets/video/reel-environment.mp4",
-                "../assets/video/reel-mystique.mp4",
-            ]
+                videoDrone,
+                videoBuilding,
+                videoMaze,
+                videoEnvironment,
+                videoMystique
+            ],
+            index: 0
         }
+    },
+    mounted() {
+        this.videos.sort(() => { return 0.5 - Math.random() })
+        let videoPlayer = document.getElementById("videoforeground")
+        videoPlayer.setAttribute("src", this.videos[this.index])
+        videoPlayer.load()
+        videoPlayer.play()
+        videoPlayer.addEventListener("ended", () => { 
+            this.index += 1
+            videoPlayer.setAttribute("src", this.videos[this.index])
+            videoPlayer.load()
+            videoPlayer.play()
+        })
     }
 }
 </script>
@@ -18,8 +39,8 @@ export default {
 
 <template>
     <div id="videoplayer">
-        <video id="video">
-            <source controls src="../assets/video/reel-drone.mp4" type="video/mp4" autoplay="true">
+        <video id="videoforeground" muted="muted">
+            <source controls src="../assets/video/reel-drone.mp4" type="video/mp4">
             Video could not be loaded
         </video>
     </div>
@@ -29,16 +50,13 @@ export default {
 <style scoped>
 #videoplayer {
     overflow: hidden;
-    max-height: 500px;
-    display: grid;
-    margin-top: 20px;
 }
 
-video {
-    opacity: 50%;
-    width: 100%;
-    height: auto;
-    position: relative;
+#videoforeground {
+    opacity: 70%;
+    width: auto;
+    max-width: 100%;
+    margin: auto;
 }
 
 </style>
