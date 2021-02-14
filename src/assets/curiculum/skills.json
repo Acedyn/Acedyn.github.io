@@ -1,0 +1,35 @@
+{
+    "curiculum":
+    [
+        {
+            "name": "Houdini",
+            "level": 100
+        },
+        {
+            "name": "Unreal",
+            "level": 80
+        },
+        {
+            "name": "Maya",
+            "level": 90
+        },
+        {
+            "name": "c++",
+            "level": 80
+        },
+        {
+            "name": "Python",
+            "level": 70
+        },
+        {
+            "name": "Web developpement",
+            "level": 70
+        },
+        {
+            "name": "Guitar",
+            "level": 80
+        }
+    ]
+}
+
+

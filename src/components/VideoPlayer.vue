@@ -53,10 +53,10 @@ export default {
 }
 
 #videoforeground {
-    opacity: 70%;
+    opacity: 50%;
     width: auto;
-    max-width: 100%;
-    margin: auto;
+    height: 100%;
+    position: relative;
 }
 
 </style>

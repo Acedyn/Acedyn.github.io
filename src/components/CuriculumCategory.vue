@@ -1,19 +1,22 @@
 <script>
 export default {
-    name: "CuriculumElement",
-    props: [ "name" ]
+    name: "CuriculumCategory",
+    props: [ "name" ],
 }
 </script>
 
 
 <template>
-    <div id="CuriculumElement">
+    <div id="curiculumcategory">
         <h3>{{ name }}</h3>
     </div>
 </template>
 
+
 <style scoped>
-#CuriculumElement {
+#curiculumcategory {
+    width: 100px;
     background-color: pink;
 }
+
 </style>
