@@ -29,10 +29,12 @@ export default {
         <div class="header">
             <img title="profile" class="profile" src="../assets/photos/identité.jpg"/>
         </div>
-        <ul class="curiculum">
+        <ul class="elements">
             <li class="element"><CuriculumCategory name="Formations" v-bind:curiculum="formation"/></li>
-            <li class="element"><CuriculumCategory name="Skills" v-bind:curiculum="skills"/></li>
+            <span class="line"/>
             <li class="element"><CuriculumCategory name="Experience" v-bind:curiculum="experience"/></li>
+            <span class="line"/>
+            <li class="element"><CuriculumCategory name="Skills" v-bind:curiculum="skills"/></li>
         </ul>
     </div>
 </template>
@@ -60,8 +62,7 @@ export default {
     border-radius: 50%;
 }
 
-.curiculum {
-    margin-top: 20px;
+.elements {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -71,7 +72,18 @@ export default {
 }
 
 .element {
+    flex-grow: 4;
     list-style: none;
     width: 300px;
+}
+
+.line {
+    flex-shrink: 4;
+    height: 80%;
+    width: 2px;
+    background-color: #6857B3;
+    border-radius: 1px;
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>
