@@ -47,12 +47,6 @@ export default {
     <div id="home">
         <PageTitle title="HOME"/>
         <VideoPlayer/>
-        <p class="introduction">
-            I am currently a student in computer programming at ArtFX. 
-            I started as a 3D generalist and now focus more on programming. 
-            My main softwares are Houdini, Maya and Unreal, I am mostly interested in procedual modeling but also in procedural in general (Animation, FX...) 
-            <br/>
-        </p>
         <ul class="logos">
             <li class="logo" v-for="logo in logos" v-bind:key="logo"><img v-bind:src="logo" alt=""></li>
         </ul>
@@ -64,17 +58,7 @@ export default {
 #home {
     overflow: auto;
     display: grid;
-    grid-template-rows: 50px 500px 4fr 1fr;
-}
-
-.introduction {
-    font-size: 16px;
-    text-align: center;
-    display: flex;
-    align-items: flex-end;
-    color: #C8C8C8;
-    margin-left: 20px;
-    margin-right: 20px;
+    grid-template-rows: 50px 600px 4fr 1fr;
 }
 
 .logos {
@@ -90,6 +74,7 @@ export default {
     height: 80px;
     width: auto;
     opacity: 50%;
-    margin: 10px;
+    margin: auto;
+    padding: 10px;
 }
 </style>
