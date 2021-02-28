@@ -2,10 +2,12 @@
 
 ## Description
 
-A Houdini tool to animate the transformation of an animated 3D shape into an 
+A Houdini tool to animate the transformation of an animated 3D shape into an
 other one in the Mystic's style
 
 ## Image
+
+images/MysticTransformation.png
 
 ## Project
 

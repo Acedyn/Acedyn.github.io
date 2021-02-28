@@ -27,7 +27,7 @@ export default {
     <div id="about">
         <PageTitle title="ABOUT ME"/>
         <div class="header">
-            <img title="profile" class="profile" src="../assets/photos/identité.jpg"/>
+            <img title="profile" class="profile" src="../assets/images/identité.jpg"/>
         </div>
         <ul class="elements">
             <li class="element"><CuriculumCategory name="Formations" v-bind:curiculum="formation"/></li>

@@ -6,6 +6,8 @@ A simple engine made with opengl that render a cube that rotate with the mouse i
 
 ## Image
 
+images/OpenGlSimpleEngine.png
+
 ## Project
 
 ## Tools

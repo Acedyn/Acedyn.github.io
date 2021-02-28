@@ -73,7 +73,7 @@ export default {
 .logo {
     height: 80px;
     width: auto;
-    opacity: 50%;
+    opacity: 0.5;
     margin: auto;
     padding: 10px;
 }

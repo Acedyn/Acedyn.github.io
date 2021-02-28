@@ -26,6 +26,8 @@ export default {
                     let content = parser.parseFromString(project_response.srcElement.response, "text/html")
                     let name = content.getElementsByTagName("h1")[0].textContent
                     let file = content.getElementById("file").getAttribute("data-path").match(/(?<=\/)[a-zA-Z.\-_]*$/gm)
+                    let image = content.getElementById("user-content-image").parentNode.nextSibling.textContent
+                    console.log(image)
                     let description = content.getElementById("user-content-description").parentNode.nextSibling.nextSibling.textContent
                     let categories = []
                     let categoriesDOM = content.getElementById("user-content-tools").parentNode.nextSibling.nextSibling.childNodes

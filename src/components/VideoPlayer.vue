@@ -66,7 +66,7 @@ export default {
 #videoforeground {
     z-index: 1;
     position: relative;
-    opacity: 50%;
+    opacity: 0.5;
     width: auto;
     height: 100%;
     float: right;
