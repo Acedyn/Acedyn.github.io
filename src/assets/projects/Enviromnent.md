@@ -6,7 +6,7 @@ An environment made in clarisse as an exercice for clarisse
 
 ## Image
 
-images/Environment.png
+images/Enviromnent.png
 
 ## Project
 
