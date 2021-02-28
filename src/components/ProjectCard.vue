@@ -8,7 +8,7 @@ export default {
         }
     },
     mounted() {
-        this.redirect += this.project.id
+        this.redirect += this.project.file
     }
 }
 </script>

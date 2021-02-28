@@ -18,7 +18,7 @@ export default {
             let content = parser.parseFromString(project_response.srcElement.response, "text/html")
             this.markdown = content.getElementById("file").innerHTML
         })
-        let url = "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/" + this.$route.params.project + ".md"
+        let url = "https://api.github.com/repos/acedyn/portfoliosimonlambin/contents/src/assets/projects/" + this.$route.params.project
         xhr_project.open("GET", url)
         xhr_project.setRequestHeader("Accept", "application/vnd.github.v3.html")
         xhr_project.send()
