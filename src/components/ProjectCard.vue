@@ -1,13 +1,21 @@
 <script>
 export default {
     name: "ProjectCard",
-    props: ["project"]
+    props: ["project"],
+    data: () => {
+        return {
+            redirect: "/portfolio/"
+        }
+    },
+    mounted() {
+        this.redirect += this.project.id
+    }
 }
 </script>
 
 
 <template>
-    <div id="projectCard">
+    <div id="projectCard" v-on:click="$router.push(redirect)">
         <h4>{{ project.name }}</h4>
         <img v-bind:src="require('../assets/' + project.image)" v-bind:alt="project.description"/>
         <p class="description">{{ project.description }}</p>

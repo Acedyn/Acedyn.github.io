@@ -24,6 +24,7 @@ export default {
                 xhr_project.addEventListener("load", (project_response) => {
                     let parser = new DOMParser();
                     let content = parser.parseFromString(project_response.srcElement.response, "text/html")
+                    console.log(content.getElementById("file").getAttribute("data-path"))
                     let name = content.getElementsByTagName("h1")[0].textContent
                     let description = content.getElementById("user-content-description").parentNode.nextSibling.nextSibling.textContent
                     let categories = []
@@ -39,6 +40,7 @@ export default {
                     this.projects.push(
                         {
                             name: name,
+                            id: '',
                             categories: categories,
                             description: description,
                             image: "default/warning.svg"

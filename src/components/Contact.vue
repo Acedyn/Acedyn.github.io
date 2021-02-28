@@ -19,6 +19,7 @@ export default {
 
 <style scoped>
 #contact {
-    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 50px 1fr;
 }
 </style>
