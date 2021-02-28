@@ -19,6 +19,8 @@ export default {
 
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
@@ -36,6 +38,10 @@ html {
 #app {
     display: grid;
     grid-template-columns: 300px 4fr;
+}
+
+p {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 </style>

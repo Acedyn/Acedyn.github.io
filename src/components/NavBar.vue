@@ -110,6 +110,7 @@ a.router-link-exact-active {
     align-items: center;
     font-weight: normal;
     font-size: 120%;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .line {

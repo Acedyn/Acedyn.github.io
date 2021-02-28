@@ -101,6 +101,7 @@ export default {
     color: #C8C8C8;
     padding: 50px;
     padding-left: 200px;
+    line-height: 28px;
 }
 
 </style>

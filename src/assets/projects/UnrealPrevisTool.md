@@ -6,7 +6,7 @@ An Unreal plugin to facilitate realtime keying, tracking, and compositing for pr
 
 ## Image
 
-default/warning.svg
+default/UnrealPrevisTool.png
 
 ## Project
 

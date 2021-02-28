@@ -27,7 +27,6 @@ export default {
                     let name = content.getElementsByTagName("h1")[0].textContent
                     let file = content.getElementById("file").getAttribute("data-path").match(/(?<=\/)[a-zA-Z.\-_]*$/gm)
                     let image = content.getElementById("user-content-image").parentNode.nextSibling.nextSibling.textContent
-                    console.log(image)
                     let description = content.getElementById("user-content-description").parentNode.nextSibling.nextSibling.textContent
                     let categories = []
                     let categoriesDOM = content.getElementById("user-content-tools").parentNode.nextSibling.nextSibling.childNodes
@@ -89,7 +88,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .card {
